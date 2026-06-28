@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-velvet-50: #fdf2f2;
+  --color-velvet-100: #fce4e4;
+  --color-velvet-200: #f9cccc;
+  --color-velvet-300: #f3a3a3;
+  --color-velvet-400: #e86b6b;
+  --color-velvet-500: #d94040;
+  --color-velvet-600: #c52525;
+  --color-velvet-700: #7b1113;
+  --color-velvet-800: #6a1012;
+  --color-velvet-900: #4a0b0d;
+  --color-velvet-950: #2d0607;
+
+  --color-dark-50: #f6f6f6;
+  --color-dark-100: #e2e2e2;
+  --color-dark-200: #c5c5c5;
+  --color-dark-300: #a0a0a0;
+  --color-dark-400: #7a7a7a;
+  --color-dark-500: #5c5c5c;
+  --color-dark-600: #3d3d3d;
+  --color-dark-700: #2a2a2a;
+  --color-dark-800: #1e1e1e;
+  --color-dark-900: #151515;
+  --color-dark-950: #0d0d0d;
+
+  --color-gold-400: #d4a848;
+  --color-gold-500: #c49a38;
+  --color-gold-600: #a07d2a;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
+  background-color: #0d0d0d;
+  color: #e2e2e2;
+  direction: rtl;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7b1113;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c52525;
+}
+
+input,
+select,
+textarea {
+  direction: rtl;
+}
+
+input[type="time"],
+input[type="number"] {
+  direction: ltr;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(123, 17, 19, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(123, 17, 19, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+@layer utilities {
+  .gold-separator {
+    height: 1px;
+    background: linear-gradient(
+      to left,
+      transparent,
+      #c49a38,
+      transparent
+    );
+  }
+}
